@@ -1,0 +1,151 @@
+set(PROJECT_SOURCES
+    ${CMAKE_CURRENT_SOURCE_DIR}/main.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/mainwindow.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/aboutdialog.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/aboutdialog.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/agreementtab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/agreementtab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/agreementtablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/agreementtablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/companytab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/companytab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/customertab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/customertab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/customertablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/customertablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/employeetab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/employeetab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/employeetablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/employeetablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicedrafttab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicedrafttab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicedrafttablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicedrafttablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicefactory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicefactory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoiceprinter.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoiceprinter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicetab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicetab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicetablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/invoicetablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salaryfactory.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salaryfactory.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarydrafttab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarydrafttab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarydrafttablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarydrafttablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarysliptab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarysliptab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarysliptablemodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salarysliptablemodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/reportmodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/reportmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/reportstab.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/reportstab.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/taxtableyearsmodel.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/taxtableyearsmodel.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/companyreportprinter.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/companyreportprinter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/pdfviewer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/pdfviewer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/salaryslipprinter.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/salaryslipprinter.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/customer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/customer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/companyinfo.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/companyinfo.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/database.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/database.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/business.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/business.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/agreement.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/agreement.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/customers.h data/customers.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/agreements.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/agreements.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employee.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employee.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employees.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employees.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicedraft.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicedraft.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicedrafts.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicedrafts.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoice.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoice.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoices.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoices.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/idatastore.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/sqlitedatastore.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/sqlitedatastore.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/taxtables.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/taxtables.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/traktamente.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarytypes.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarytypes.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarydraft.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarydraft.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarydrafts.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salarydrafts.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryslip.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryslip.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryslips.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryslips.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryreport.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/salaryreport.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/companyreport.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/companyreport.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/fiscalyear.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/fiscalyear.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employerfees.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/employerfees.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicereport.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicereport.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicematch.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/data/invoicematch.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/amount.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/amount.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/personnummer.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/personnummer.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/printerutilities.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/util/printerutilities.cpp
+)
+
+qt_add_executable(${PROJECT_NAME}
+    MANUAL_FINALIZATION
+    ${PROJECT_SOURCES}
+)
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        ${CMAKE_BINARY_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}
+        ${CMAKE_CURRENT_SOURCE_DIR}/clients
+        ${CMAKE_CURRENT_SOURCE_DIR}/data
+        ${CMAKE_CURRENT_SOURCE_DIR}/util
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Widgets
+    Qt6::PdfWidgets
+    Qt6::Svg
+    Qt6::PrintSupport
+    Qt6::SvgWidgets
+    Qt6::Network
+    Qt6::Sql
+)
+
+include(GNUInstallDirs)
+install(TARGETS ${PROJECT_NAME}
+    BUNDLE DESTINATION .
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+)
+
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
+
+qt_finalize_executable(${PROJECT_NAME})
