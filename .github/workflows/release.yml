@@ -1,0 +1,70 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Build release artifact and publish
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/crofteq/sdk-qt-6.8.3:1.0.0
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Register safe Git directory
+        run: git config --global --add safe.directory $GITHUB_WORKSPACE
+      - name: Build Linux AppImage
+        run: just build-linux
+      - name: Build Windows package
+        run: just build-windows
+      - name: Generate SHA-256 checksums
+        run: just checksums
+      - name: Compute release version
+        id: version
+        run: |
+          ref_name="${GITHUB_REF#refs/tags/}"
+          release_version="${ref_name#v}"
+          echo "release_version=$release_version" >> "$GITHUB_OUTPUT"
+      - name: Read CHANGELOG.md for release notes
+        id: changelog
+        run: |
+          VERSION="${{ steps.version.outputs.release_version }}"
+          if [ -f CHANGELOG.md ]; then
+            # Extract notes for the specific version from the changelog
+            # This extracts content between "## X.Y.Z" headers (handles both first and subsequent releases)
+            RELEASE_NOTES=$(awk "
+              /^## $VERSION / {found=1; next}
+              /^## / && found {exit}
+              found
+            " CHANGELOG.md | sed '/^[[:space:]]*$/d')
+            
+            if [ -z "$RELEASE_NOTES" ]; then
+              RELEASE_NOTES="No changelog entry found for version $VERSION"
+            fi
+          else
+            RELEASE_NOTES="CHANGELOG.md not found."
+          fi
+          echo "release_notes<<EOF" >> $GITHUB_OUTPUT
+          echo "$RELEASE_NOTES" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Create GitHub Release and upload assets
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ github.ref_name }}
+          body: ${{ steps.changelog.outputs.release_notes }}
+          files: |
+            build/artifacts/ordning-${{ steps.version.outputs.release_version }}.AppImage
+            build/artifacts/ordning-windows-${{ steps.version.outputs.release_version }}.zip
+            build/artifacts/checksums.sha256
+          draft: false
+          prerelease: false
