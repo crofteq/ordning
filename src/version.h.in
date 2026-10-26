@@ -1,0 +1,6 @@
+#pragma once
+
+static constexpr const char BUILD_VERSION[] = "@BUILD_VERSION@";
+static constexpr const char BUILD_DATE[] = "@BUILD_DATE@";
+static constexpr const char BUILD_HASH[] = "@BUILD_HASH@";
+static constexpr const char REPOSITORY_URL[] = "@REPOSITORY_URL@";

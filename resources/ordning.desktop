@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=ordning
+Exec=ordning
+Icon=ordning
+Categories=Office;
+Terminal=false
